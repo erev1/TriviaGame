@@ -1,0 +1,31 @@
+html,
+body,
+.view {
+    height: 100%;
+}
+
+.view {
+    background: url("../images/books.jpg")no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.divider-10{ 
+width:100%; 
+min-height:1px; 
+margin-top:10px; 
+margin-bottom:10px;  
+display:inline-block; 
+position:relative;
+}
+
+.answer{
+
+}
+
+.withBackground{
+	background-color: antiqueWhite;
+	padding: 10px;
+}
