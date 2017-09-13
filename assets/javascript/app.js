@@ -5,11 +5,12 @@ $(document).ready(function(){
 	 {question: "Who is the author of Pride and Prejudice?", correctAnswer: "Jane Austen", 1: "Jane Austen", 2: "Ernest Hemingway", 3:"Bart Simpson", 4:"Donald Trump", gif: "https://media.giphy.com/media/FgnT83M1fJ2JG/giphy.gif"},
 	 {question: "How many Bronte sisters are there?", correctAnswer: "3", 1: "3", 2: "4", 3: "5", 4: "9", gif:"https://media.giphy.com/media/P1Ia8PyyEZbPy/giphy.gif"},
 	 {question: "What was Charles Dickens first novel?", correctAnswer: "The Pickwick Papers", 1: "The Pickwick Papers", 2: "A Tale of Two Cities", 3: "Great Expectations", 4: "A Christmas Carol", gif: "https://media.giphy.com/media/sjIupMAie2WY0/giphy.gif"},
-	 {question: "In Dracula, who is Lucy Westenra's doctor?", correctAnswer: "Van Helsing", 1: "Van Helsing", 2: "Arthur Holmwood", 3: "Quincy Morris", 4: "John Seward", gif:"https://images.gr-assets.com/hostedimages/1446662623ra/16859696.gif"}
+	 {question: "In Dracula, who is Lucy Westenra's doctor?", correctAnswer: "Van Helsing", 1: "Van Helsing", 2: "Arthur Holmwood", 3: "Quincy Morris", 4: "John Seward", gif:"https://images.gr-assets.com/hostedimages/1446662623ra/16859696.gif"},
+	 {question: "In what year was Dr Jekyll & Mr Hyde published?", correctAnswer: "1886", 1:"1886", 2:"1897", 3:"1915", 4: "1874", gif: "https://media.giphy.com/media/JNvJbgsSzONi/giphy.gif"}
 	]
 
 	var questionCount = 0
-	var time = 3
+	var time = 20
 	var clockrunning = true
 	var correctAnswers = 0
 	var incorrectAnswers = 0
@@ -18,7 +19,7 @@ $(document).ready(function(){
 	$("#start-button").on("click", function(){
 		
 		$(this).empty()
-		$("#timer-div").append('<div>Time remaining: <span id="time-remaining">30</span></div>')
+		$("#timer-div").append('<div>Time remaining: <span id="time-remaining">20</span></div>')
 
 		setQA(questionCount)
 
@@ -59,11 +60,20 @@ $(document).ready(function(){
 			$("#finalScoreCorrect").text("Correct Answers: " + correctAnswers)
 			$("#content").append('<div id="finalScoreIncorrect"></div>')
 			$("#finalScoreIncorrect").text("Incorrect Answers: " + incorrectAnswers)
+			$("#content").append('<button id="reset"></button>')
+			$("#reset").text("Restart!")
+			$("#reset").on("click", function() {
+				questionCount = 0
+				correctAnswers = 0
+				incorrectAnswers = 0
+				setQA()
+
+			})
 			return 
 
 		}
 
-		time = 3
+		time = 20
 		clockrunning = true
 		var array = [1,2,3,4]
 		var currentNumber

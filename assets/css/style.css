@@ -22,9 +22,19 @@ position:relative;
 }
 
 .answer{
+	margin-top:10px;
+	margin-bottom: 10px;
 
 }
 
+.answer:hover{
+	background-color: white;
+}
+
+.question {
+	font-size: 2em;
+	font-weight: bold;
+}
 .withBackground{
 	background-color: antiqueWhite;
 	padding: 10px;
